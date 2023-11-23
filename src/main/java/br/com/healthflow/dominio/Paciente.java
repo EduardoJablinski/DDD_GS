@@ -18,7 +18,7 @@ public class Paciente implements Comparable<Paciente>{
 	public Paciente() {
 	}
 
-    public Paciente(int idPaciente, String nome, int cpf, String rg, String telefone, String endereco, String email, String sexo, String tipoSangue, double altura, double peso, String escolaridade) {
+    public Paciente(int idPaciente, String nome, String rg, int cpf, String endereco, String email, String telefone, String sexo, String tipoSangue, String escolaridade) {
         this.idPaciente = idPaciente;
         this.nome = nome;
         this.cpf = cpf;
@@ -28,8 +28,6 @@ public class Paciente implements Comparable<Paciente>{
         this.email = email;
         this.sexo = sexo;
         this.tipoSangue = tipoSangue;
-        this.altura = altura;
-        this.peso = peso;
         this.escolaridade = escolaridade;
     }
 

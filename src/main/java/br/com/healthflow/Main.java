@@ -2,12 +2,15 @@ package br.com.healthflow;
 
 import java.io.IOException;
 import java.net.URI;
+import java.util.List;
 
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 
 import br.com.healthflow.controller.CORSFilter;
+import br.com.healthflow.dominio.Sintoma;
+import br.com.healthflow.infra.dao.SintomaDAO;
 
 /**
  * Main class.
@@ -24,7 +27,7 @@ public class Main {
     public static HttpServer startServer() {
         // create a resource config that scans for JAX-RS resources and providers
         // in com.example package
-        final ResourceConfig rc = new ResourceConfig().packages("br.com.fiap.biblioteca");
+    	final ResourceConfig rc = new ResourceConfig().packages("br.com.healthflow.controller");
         rc.register(new CORSFilter());
 
         // create and start a new instance of grizzly http server
@@ -43,6 +46,8 @@ public class Main {
                 + "%s%nHit Ctrl-C to stop it...", BASE_URI));
         System.in.read();
         server.stop();
+        
+        
     }
 }
 

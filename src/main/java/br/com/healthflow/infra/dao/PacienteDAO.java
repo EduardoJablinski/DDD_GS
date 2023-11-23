@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import br.com.healthflow.dominio.Paciente;
 import br.com.healthflow.dominio.RepositorioPacientes;
 
@@ -19,7 +18,7 @@ public class PacienteDAO implements RepositorioPacientes {
 	@Override
 	public void adicionar(Paciente paciente) {
 		try {
-			String sql = "INSERT INTO TB_HF_PACIENTE (id_paciente, nm_nome_paciente, nm_rg_paciente, nr_cpf_paciente, nm_end_paciente, nm_email_paciente, nm_tel_paciente, fl_sexo_paciente, nm_tp_sang_paciente, nm_escolaridade_paciente) VALUES(?, ?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO TB_HF_PACIENTE (id_paciente, nm_nome_paciente, nm_rg_paciente, nr_cpf_paciente, nm_end_paciente, nm_email_paciente, nm_tel_paciente, fl_sexo_paciente, nm_tp_sang_paciente, nm_escolaridade_paciente) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement comandoDeInsercao = conexao.prepareStatement(sql);
 			comandoDeInsercao.setLong(1, obterProximoIdPacientes());
 			comandoDeInsercao.setString(2, paciente.getNome());
